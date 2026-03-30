@@ -28,7 +28,7 @@ const __dirname = path.dirname(__filename);
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.get("/", (req, res) => {
-  res.send("API is running...");
+  res.send("API is running...2");
 });
 app.use("/api/auth", authRoutes);
 app.use("/api/admin", adminRoutes);

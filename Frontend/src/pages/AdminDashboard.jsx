@@ -61,7 +61,7 @@ export default function AdminDashboard() {
   const token = localStorage.getItem('token');
   if (!token) return navigate('/login');
 
-  fetch('http://localhost:5000/api/auth/profile', {
+  fetch('http://pesd-3.onrender.com/api/auth/profile', {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -102,7 +102,7 @@ export default function AdminDashboard() {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/admin/update-role', {
+      const response = await fetch('http://pesd-3.onrender.com/api/admin/update-role', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -129,7 +129,7 @@ export default function AdminDashboard() {
   const fetchInstructors = async () => {
       try {
           const token = localStorage.getItem('token');
-          const response = await fetch('http://localhost:5000/api/admin/teachers', {
+          const response = await fetch('http://pesd-3.onrender.com/api/admin/teachers', {
             method: 'GET',
               headers: {
                   Authorization: `Bearer ${token}`,
@@ -149,7 +149,7 @@ export default function AdminDashboard() {
   const fetchCourses = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/admin/courses', {
+      const response = await fetch('https://pesd-3.onrender.com/api/admin/courses', {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -177,7 +177,7 @@ export default function AdminDashboard() {
   const fetchBatches = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/admin/batches', {
+      const response = await fetch('https://pesd-3.onrender.com/api/admin/batches', {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -211,7 +211,7 @@ export default function AdminDashboard() {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/admin/add-course', {
+      const response = await fetch('https://pesd-3.onrender.com/api/admin/add-course', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -256,7 +256,7 @@ export default function AdminDashboard() {
 
       try {
           const token = localStorage.getItem('token');
-          const response = await fetch(`http://localhost:5000/api/admin/course/${selectedCourseId}`, {
+          const response = await fetch(`https://pesd-3.onrender.com/api/admin/course/${selectedCourseId}`, {
               method: 'GET',
               headers: {
                   Authorization: `Bearer ${token}`,
@@ -290,7 +290,7 @@ export default function AdminDashboard() {
 
       try {
           const token = localStorage.getItem('token');
-          const response = await fetch(`http://localhost:5000/api/admin/update-course/${editCourseId}`, {
+          const response = await fetch(`https://pesd-3.onrender.com/api/admin/update-course/${editCourseId}`, {
               method: 'PUT',
               headers: {
                   'Content-Type': 'application/json',
@@ -327,7 +327,7 @@ export default function AdminDashboard() {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/delete-course/${courseData.courseId}`, {
+      const response = await fetch(`https://pesd-3.onrender.com/api/admin/delete-course/${courseData.courseId}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -360,7 +360,7 @@ export default function AdminDashboard() {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/admin/add-batch', {
+      const response = await fetch('https://pesd-3.onrender.com/api/admin/add-batch', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -402,7 +402,7 @@ export default function AdminDashboard() {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/batch/${selectedBatchId}`, {
+      const response = await fetch(`https://pesd-3.onrender.com/api/admin/batch/${selectedBatchId}`, {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -434,7 +434,7 @@ export default function AdminDashboard() {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/update-batch/${editBatchId}`, {
+      const response = await fetch(`https://pesd-3.onrender.com/api/admin/update-batch/${editBatchId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -466,7 +466,7 @@ export default function AdminDashboard() {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/delete-batch/${selectedBatchId}`, {
+      const response = await fetch(`https://pesd-3.onrender.com/api/admin/delete-batch/${selectedBatchId}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -491,7 +491,7 @@ export default function AdminDashboard() {
     const fetchCounts = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch('http://localhost:5000/api/admin/dashboard-counts', {
+        const response = await fetch('https://pesd-3.onrender.com/api/admin/dashboard-counts', {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,

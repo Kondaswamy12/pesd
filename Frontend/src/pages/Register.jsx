@@ -95,7 +95,7 @@ export default function Register() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/auth/send-verification-code",
+        "https://pesd-3.onrender.com/api/auth/send-verification-code",
         {
           method: "POST",
           headers: {

@@ -93,7 +93,7 @@ export default function PeerEvaluationsOverlay({ flaggedEvaluationsOverlayOpen, 
                     <td style={{ ...tdCellStyle }}>
                       {evaluation.document?.documentPath ? (
                         <a
-                          href={`http://localhost:5000/${evaluation.document.documentPath}`}
+                          href={`https://pesd-3.onrender.com/${evaluation.document.documentPath}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           style={{ color: "#4b3c70", textDecoration: "underline" }}

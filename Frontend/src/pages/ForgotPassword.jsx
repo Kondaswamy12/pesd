@@ -16,7 +16,7 @@ export default function ForgotPassword() {
         setError('');
         setLoading(true);
         try {
-            const res = await axios.post('http://localhost:5000/api/auth/forgot-password', { email });
+            const res = await axios.post('https://pesd-3.onrender.com/api/auth/forgot-password', { email });
             setMessage(res.data.message);
             setTimeout(() => navigate('/login'), 3000);
         } catch (err) {

@@ -55,7 +55,7 @@ const ExamList = ({ exams, handleEditClick, handleDownloadPDF, handleBulkUploadC
                   <td>{exam.totalSubmissions}</td>
                   <td style={{ textAlign: 'center' }}>
                     {typeof exam.solutions === 'string' && exam.solutions.trim() !== '' ? (
-                      <a href={`http://localhost:5000/${exam.solutions}`} target="_blank" rel="noopener noreferrer">
+                      <a href={`https://pesd-3.onrender.com/${exam.solutions}`} target="_blank" rel="noopener noreferrer">
                         View Solutions
                       </a>
                     ) : (

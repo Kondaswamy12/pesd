@@ -69,7 +69,7 @@ const EvaluationOverlay = ({
             style={{ flex: 1, border: "1px solid #ccc", borderRadius: "8px" }}
           >
             <iframe
-              src={`http://localhost:5000/${selectedEvaluation?.documentPath}`}
+              src={`https://pesd-3.onrender.com/${selectedEvaluation?.documentPath}`}
               title="Document Viewer"
               style={{
                 width: "100%",
@@ -96,7 +96,7 @@ const EvaluationOverlay = ({
               </h2>
               <div style={{ display: "flex", gap: "1rem" }}>
                 <a
-                  href={`http://localhost:5000/${selectedEvaluation?.documentPath}`}
+                  href={`https://pesd-3.onrender.com/${selectedEvaluation?.documentPath}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
@@ -114,7 +114,7 @@ const EvaluationOverlay = ({
                   Evaluation File
                 </a>
                 <a
-                  href={`http://localhost:5000/${selectedEvaluation?.exam_solutions}`}
+                  href={`https://pesd-3.onrender.com/${selectedEvaluation?.exam_solutions}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{

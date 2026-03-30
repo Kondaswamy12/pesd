@@ -61,7 +61,7 @@ export default function TeacherDashboard() {
   const token = localStorage.getItem('token');
   if (!token) return navigate('/login');
 
-  fetch('http://localhost:5000/api/auth/profile', {
+  fetch('https://pesd-3.onrender.com/api/auth/profile', {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -85,7 +85,7 @@ export default function TeacherDashboard() {
     const fetchDashboardStats = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch('http://localhost:5000/api/teacher/dashboard-stats', {
+        const response = await fetch('https://pesd-3.onrender.com/api/teacher/dashboard-stats', {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,
@@ -115,7 +115,7 @@ export default function TeacherDashboard() {
     const fetchCoursesAndBatches = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch('http://localhost:5000/api/teacher/teacher-courses-batches', {
+        const response = await fetch('https://pesd-3.onrender.com/api/teacher/teacher-courses-batches', {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,
@@ -157,7 +157,7 @@ export default function TeacherDashboard() {
       const fetchExams = async () => {
         try {
           const token = localStorage.getItem('token');
-          const response = await fetch('http://localhost:5000/api/teacher/teacher-exams', {
+          const response = await fetch('https://pesd-3.onrender.com/api/teacher/teacher-exams', {
             method: 'GET',
             headers: {
               Authorization: `Bearer ${token}`,
@@ -190,7 +190,7 @@ export default function TeacherDashboard() {
   const refreshExamsList = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/teacher/teacher-exams', {
+      const response = await fetch('https://pesd-3.onrender.com/api/teacher/teacher-exams', {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -220,7 +220,7 @@ export default function TeacherDashboard() {
 
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch(`http://localhost:5000/api/teacher/${action}-ta`, {
+      const response = await fetch(`https://pesd-3.onrender.com/api/teacher/${action}-ta`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -268,7 +268,7 @@ export default function TeacherDashboard() {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/teacher/students-enroll', {
+      const response = await fetch('https://pesd-3.onrender.com/api/teacher/students-enroll', {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -297,7 +297,7 @@ export default function TeacherDashboard() {
   const downloadEnrolledStudents = async (courseId, batchId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/teacher/enrolled-students?courseId=${courseId}&batchId=${batchId}`, {
+      const response = await fetch(`https://pesd-3.onrender.com/api/teacher/enrolled-students?courseId=${courseId}&batchId=${batchId}`, {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -338,7 +338,7 @@ export default function TeacherDashboard() {
       if (formData.solutions) {
         formDataToSend.append('solutions', formData.solutions);
       }
-      const response = await fetch('http://localhost:5000/api/teacher/exam-schedule', {
+      const response = await fetch('https://pesd-3.onrender.com/api/teacher/exam-schedule', {
         method: 'POST',
         headers: {
           // 'Content-Type': 'application/json',
@@ -391,7 +391,7 @@ export default function TeacherDashboard() {
       if (updatedExam.solutions) {
         editFormDataToSend.append('solutions', updatedExam.solutions);
       }
-      const response = await fetch(`http://localhost:5000/api/teacher/update-exam/${updatedExam._id}`, {
+      const response = await fetch(`https://pesd-3.onrender.com/api/teacher/update-exam/${updatedExam._id}`, {
         method: 'PUT',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -420,7 +420,7 @@ export default function TeacherDashboard() {
     try {
       const token = localStorage.getItem('token'); 
 
-      const response = await fetch(`http://localhost:5000/api/teacher/download-pdf/${examId}`, {
+      const response = await fetch(`https://pesd-3.onrender.com/api/teacher/download-pdf/${examId}`, {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${token}`, 
@@ -454,7 +454,7 @@ export default function TeacherDashboard() {
     formData.append('examId', selectedExamForBulkUpload);
 
     try {
-      const response = await fetch('http://localhost:5000/api/teacher/bulk-upload', {
+      const response = await fetch('https://pesd-3.onrender.com/api/teacher/bulk-upload', {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -483,7 +483,7 @@ export default function TeacherDashboard() {
     try {
       const token = localStorage.getItem('token');
 
-      const response = await fetch(`http://localhost:5000/api/teacher/send-evaluation/${examId}`, {
+      const response = await fetch(`https://pesd-3.onrender.com/api/teacher/send-evaluation/${examId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -509,7 +509,7 @@ export default function TeacherDashboard() {
 
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch(`http://localhost:5000/api/teacher/flag-evaluations/${examId}`, {
+      const response = await fetch(`https://pesd-3.onrender.com/api/teacher/flag-evaluations/${examId}`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -534,7 +534,7 @@ export default function TeacherDashboard() {
 
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch(`http://localhost:5000/api/teacher/mark-exam-done/${examId}`, {
+      const response = await fetch(`https://pesd-3.onrender.com/api/teacher/mark-exam-done/${examId}`, {
         method: 'PUT',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -559,7 +559,7 @@ export default function TeacherDashboard() {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/teacher/delete-exam/${examId}`, {
+      const response = await fetch(`https://pesd-3.onrender.com/api/teacher/delete-exam/${examId}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -582,7 +582,7 @@ export default function TeacherDashboard() {
   const handleExamHistory = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/teacher/completed-exams', {
+      const response = await fetch('https://pesd-3.onrender.com/api/teacher/completed-exams', {
         method: 'GET',
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -601,7 +601,7 @@ export default function TeacherDashboard() {
   const handleViewEvaluations = async (examId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/teacher/flagged-evaluations/${examId}`, {
+      const response = await fetch(`https://pesd-3.onrender.com/api/teacher/flagged-evaluations/${examId}`, {
         method: 'GET',
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -630,7 +630,7 @@ export default function TeacherDashboard() {
   const handleEvaluationUpdate = async (updateData) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/teacher/update-evaluation/${updateData.evaluationId}`,
+      const response = await fetch(`https://pesd-3.onrender.com/api/teacher/update-evaluation/${updateData.evaluationId}`,
         {
           method: 'PUT',
           headers: {
@@ -661,7 +661,7 @@ export default function TeacherDashboard() {
     try {
       const token = localStorage.getItem('token');
 
-      const response = await fetch(`http://localhost:5000/api/teacher/remove-ticket/${evaluation}`, {
+      const response = await fetch(`https://pesd-3.onrender.com/api/teacher/remove-ticket/${evaluation}`, {
         method: 'PUT',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -687,7 +687,7 @@ export default function TeacherDashboard() {
 
   const handleDownloadResults = async (selectedExamForResults) => {
     const token = localStorage.getItem("token");
-    await fetch(`http://localhost:5000/api/teacher/download-results-csv/${selectedExamForResults}`,
+    await fetch(`https://pesd-3.onrender.com/api/teacher/download-results-csv/${selectedExamForResults}`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
@@ -709,7 +709,7 @@ export default function TeacherDashboard() {
   const handleDownloadIncentives = async (batchId) => {
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch(`http://localhost:5000/api/teacher/download-incentives-csv/${batchId}`, {
+      const response = await fetch(`https://pesd-3.onrender.com/api/teacher/download-incentives-csv/${batchId}`, {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
       });

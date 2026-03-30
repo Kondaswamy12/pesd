@@ -18,7 +18,7 @@ const ResultsOverlay = ({
       setLoadingAnalytics(true);
       const token = localStorage.getItem("token");
       fetch(
-        `http://localhost:5000/api/teacher/results-analytics/${selectedExamForResults}`,
+        `https://pesd-3.onrender.com/api/teacher/results-analytics/${selectedExamForResults}`,
         { headers: { Authorization: `Bearer ${token}` } }
       )
         .then(res => res.json())

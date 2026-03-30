@@ -69,7 +69,7 @@ export default function StudentDashboard() {
   const token = localStorage.getItem('token');
   if (!token) return navigate('/login');
 
-  fetch('http://localhost:5000/api/auth/profile', {
+  fetch('https://pesd-3.onrender.com/api/auth/profile', {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -109,7 +109,7 @@ export default function StudentDashboard() {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (!token) return;
-    fetch('http://localhost:5000/api/student/enrolled-courses', {
+    fetch('https://pesd-3.onrender.com/api/student/enrolled-courses', {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(res => res.json())
@@ -120,7 +120,7 @@ export default function StudentDashboard() {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (!token) return;
-    fetch('http://localhost:5000/api/student/available-courses', {
+    fetch('https://pesd-3.onrender.com/api/student/available-courses', {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(res => res.json())
@@ -135,7 +135,7 @@ export default function StudentDashboard() {
       return;
     }
     const token = localStorage.getItem('token');
-    fetch(`http://localhost:5000/api/student/course-batches/${selectedCourse}`, {
+    fetch(`https://pesd-3.onrender.com/api/student/course-batches/${selectedCourse}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(res => res.json())
@@ -146,7 +146,7 @@ export default function StudentDashboard() {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (!token) return;
-    fetch('http://localhost:5000/api/student/enrolled-batches', {
+    fetch('https://pesd-3.onrender.com/api/student/enrolled-batches', {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(res => res.json())
@@ -157,7 +157,7 @@ export default function StudentDashboard() {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (!token) return;
-    let url = 'http://localhost:5000/api/student/all-exams';
+    let url = 'https://pesd-3.onrender.com/api/student/all-exams';
     if (selectedBatchForExam) url += `?batchId=${selectedBatchForExam}`;
     fetch(url, {
       headers: { Authorization: `Bearer ${token}` },
@@ -187,7 +187,7 @@ export default function StudentDashboard() {
   const fetchDashboardStats = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/student/dashboard-stats', {
+      const response = await fetch('https://pesd-3.onrender.com/api/student/dashboard-stats', {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -221,7 +221,7 @@ export default function StudentDashboard() {
     const token = localStorage.getItem('token');
     if (!token || !user.isTA) return;
     try {
-      const res = await fetch('http://localhost:5000/api/ta/my-batches', {
+      const res = await fetch('https://pesd-3.onrender.com/api/ta/my-batches', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -239,7 +239,7 @@ export default function StudentDashboard() {
     const token = localStorage.getItem('token');
     if (!token) return;
 
-    let url = 'http://localhost:5000/api/student/evaluations';
+    let url = 'https://pesd-3.onrender.com/api/student/evaluations';
 
     try {
       const response = await fetch(url, {
@@ -273,7 +273,7 @@ export default function StudentDashboard() {
     const token = localStorage.getItem('token');
     if (!token) return;
     try {
-      const response = await fetch('http://localhost:5000/api/student/results-batches', {
+      const response = await fetch('https://pesd-3.onrender.com/api/student/results-batches', {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await response.json();
@@ -289,7 +289,7 @@ export default function StudentDashboard() {
     const token = localStorage.getItem('token');
     if (!token || !selectedResultsBatch) return;
     try {
-      const response = await fetch(`http://localhost:5000/api/student/result-batch-exams/${selectedResultsBatch}`, {
+      const response = await fetch(`https://pesd-3.onrender.com/api/student/result-batch-exams/${selectedResultsBatch}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await response.json();
@@ -309,7 +309,7 @@ export default function StudentDashboard() {
     }
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch('http://localhost:5000/api/student/request-enrollment', {
+      const response = await fetch('https://pesd-3.onrender.com/api/student/request-enrollment', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -343,7 +343,7 @@ export default function StudentDashboard() {
     formData.append('examId', examId);
 
     try {
-      const response = await fetch('http://localhost:5000/api/student/upload-exam-document', {
+      const response = await fetch('https://pesd-3.onrender.com/api/student/upload-exam-document', {
         method: 'POST',
         headers: { Authorization: `Bearer ${token}` },
         body: formData,
@@ -407,7 +407,7 @@ export default function StudentDashboard() {
     };
 
     try {
-      const response = await fetch("http://localhost:5000/api/student/submit-evaluation", {
+      const response = await fetch("https://pesd-3.onrender.com/api/student/submit-evaluation", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -451,7 +451,7 @@ export default function StudentDashboard() {
     if (!token) return;
     try {
       const res = await fetch(
-        `http://localhost:5000/api/ta/pending_enrollments/${batchId}`,
+        `https://pesd-3.onrender.com/api/ta/pending_enrollments/${batchId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -473,7 +473,7 @@ export default function StudentDashboard() {
     if (!token) return;
     try {
       const res = await fetch(
-        `http://localhost:5000/api/ta/flagged_evaluations/${batchId}`,
+        `https://pesd-3.onrender.com/api/ta/flagged_evaluations/${batchId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -495,7 +495,7 @@ export default function StudentDashboard() {
     try {
       const token = localStorage.getItem("token");
       const res = await fetch(
-        `http://localhost:5000/api/ta/accept/${enrollmentId}`,
+        `https://pesd-3.onrender.com/api/ta/accept/${enrollmentId}`,
         {
           method: "PUT",
           headers: {
@@ -521,7 +521,7 @@ export default function StudentDashboard() {
     try {
       const token = localStorage.getItem("token");
       const res = await fetch(
-        `http://localhost:5000/api/ta/decline/${enrollmentId}`,
+        `https://pesd-3.onrender.com/api/ta/decline/${enrollmentId}`,
         {
           method: "DELETE",
           headers: {
@@ -549,7 +549,7 @@ export default function StudentDashboard() {
   const TAFlagEval = async (evaluation) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/ta/flag-evaluation/${evaluation._id}`, {
+      const response = await fetch(`https://pesd-3.onrender.com/api/ta/flag-evaluation/${evaluation._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -582,7 +582,7 @@ export default function StudentDashboard() {
         showMessage("Cannot remove/reject pending evaluations!", "error");
         return;
       }
-      const response = await fetch(`http://localhost:5000/api/ta/remove-evaluation/${evaluation._id}`, {
+      const response = await fetch(`https://pesd-3.onrender.com/api/ta/remove-evaluation/${evaluation._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -615,7 +615,7 @@ export default function StudentDashboard() {
   const handleTAEvaluationUpdate = async (updateData) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/ta/update-evaluation/${updateData.evaluationId}`, {
+      const response = await fetch(`https://pesd-3.onrender.com/api/ta/update-evaluation/${updateData.evaluationId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -648,7 +648,7 @@ export default function StudentDashboard() {
     const token = localStorage.getItem('token');
     if (!token) return;
     try {
-      const response = await fetch(`http://localhost:5000/api/student/peer-result-evals/${exam._id}`, {
+      const response = await fetch(`https://pesd-3.onrender.com/api/student/peer-result-evals/${exam._id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await response.json();
@@ -672,7 +672,7 @@ export default function StudentDashboard() {
   const handleRaiseTicket = async (evaluationId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/student/raise-ticket/${evaluationId}`, {
+      const response = await fetch(`https://pesd-3.onrender.com/api/student/raise-ticket/${evaluationId}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -705,7 +705,7 @@ export default function StudentDashboard() {
   const fetchCompletedExams = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/student/completed-exams', {
+      const response = await fetch('https://pesd-3.onrender.com/api/student/completed-exams', {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await response.json();

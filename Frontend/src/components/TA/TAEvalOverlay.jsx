@@ -121,7 +121,7 @@ const TAEvalOverlay = ({
             style={{ flex: 1, border: "1px solid #ccc", borderRadius: "8px" }}
           >
             <iframe
-              src={`http://localhost:5000/${selectedTAEvaluation?.document.documentPath}`}
+              src={`https://pesd-3.onrender.com/${selectedTAEvaluation?.document.documentPath}`}
               title="Document Viewer"
               style={{
                 width: "100%",
@@ -149,7 +149,7 @@ const TAEvalOverlay = ({
               </h2>
               <div style={{ display: "flex", gap: "1rem" }}>
                 <a
-                  href={`http://localhost:5000/${selectedTAEvaluation?.document.documentPath}`}
+                  href={`https://pesd-3.onrender.com/${selectedTAEvaluation?.document.documentPath}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
@@ -167,7 +167,7 @@ const TAEvalOverlay = ({
                   Evaluation File
                 </a>
                 <a
-                  href={`http://localhost:5000/${selectedTAEvaluation?.exam.solutions}`}
+                  href={`https://pesd-3.onrender.com/${selectedTAEvaluation?.exam.solutions}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
