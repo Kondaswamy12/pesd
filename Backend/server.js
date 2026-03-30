@@ -28,7 +28,7 @@ const __dirname = path.dirname(__filename);
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.get("/", (req, res) => {
-  res.send("API is running...2");
+  res.send(process.env.EMAIL_USER || "ENV NOT WORKING");
 });
 app.use("/api/auth", authRoutes);
 app.use("/api/admin", adminRoutes);
