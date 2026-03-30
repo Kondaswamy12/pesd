@@ -27,7 +27,6 @@
     "multer": "^2.0.1",
     "nodemailer": "^7.0.3",
     "pdf-lib": "^1.17.1",
-    "pdf-poppler": "^0.2.1",
     "pdfkit": "^0.17.1",
     "qrcode": "^1.5.4",
     "qrcode-reader": "^1.0.4",
